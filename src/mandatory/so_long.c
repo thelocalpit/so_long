@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:12:58 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/31 15:55:51 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/31 16:32:36 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,18 @@
 	5. definizione della fienstra di apertura del gioco.
 	 */
 #include "../../inc/so_long.h"
+
+
+int	ft_check(char *line)
+{
+	int i;
+
+	if (!line)
+		return (0);
+	while (line[i])
+	{
+		if 
+}
 
 /* questa funzione faccio uso di gnl per ottenere la mappa. Quindi, n. di righe
 	e controllo la lunghezza della [0]. deve corrispondere la medesima
@@ -36,8 +48,9 @@ char	*ft_get_map(int fd)
 	line = malloc(1);
 	line[0] = '\0';
 	/* questo ciclo mi serve per leggere ogni carattere del file della mappa.
-		alloco la malloc a 1, come se leggessi  */
-	while
+		alloco la malloc a 1, come se leggessi carattere per carattere e poi
+		aggiungessi a una stringa successivamente.  */
+	while ()
 }
 /* per validare la mappa devo controllare che i contorni siano tutti 1.
 	devo controllare che esistano gli elementi designati per funzionare:
