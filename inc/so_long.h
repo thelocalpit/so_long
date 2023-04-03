@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:12:30 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/31 15:18:51 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/03 10:24:41 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ typedef struct s_game {
 	int map_area;
 	int x;
 	int y;
+	int player;
+	int collect;
+	int	exit;
 	
 
 } t_game;
