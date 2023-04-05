@@ -5,6 +5,7 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
+<<<<<<< HEAD
 #    Created: 2022/05/07 13:03:59 by ajordan-          #+#    #+#              #
 #    Updated: 2023/04/05 16:32:33 by pfalasch         ###   ########.fr        #
 #                                                                              #
@@ -26,6 +27,28 @@ FSANITIZE	= -fsanitize=address -g3
 RM			= rm -f
 ECHO		= echo -e
 MINILIBXCC	= -I mlx -L lib/minilibx -lmlx
+=======
+#    Created: 2023/03/31 13:27:03 by pfalasch          #+#    #+#              #
+#    Updated: 2023/04/04 12:16:23 by pfalasch         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = so_long
+BNAME = so_long_bonus
+INC = INC
+HEADER = -I inc
+LIBFT = lib/libft/
+MINILIBX = lib/minilibx/
+SRC_DIR = src/
+OBJ_DIR = obj/
+CC = gcc
+CFLAGS = -Wextra -Wall -Werror
+FSANITIZE	= -fsanitize=address -g3
+RM = rm -f
+ECHO = echo -e
+MINILIBXCC	= -I mlx -L lib/minilibx -lmlx
+#questo open gl cosa mi serve?
+>>>>>>> 11c398221458645f93420e6f9ae247f61d4fa667
 OPENGL		= -framework OpenGL -framework AppKit
 
 DEF_COLOR	=	\033[0;39m
@@ -40,6 +63,7 @@ CYAN		=	\033[0;96m
 WHITE		=	\033[0;97m
 
 SL_DIR		=	mandatory/
+<<<<<<< HEAD
 MAND_FILES	=	so_long 
 #map_validation check_limits window window_fill keyhook
 BONUS_DIR	=	bonus/
@@ -51,6 +75,19 @@ SRC_BFILES	=	$(addprefix $(BONUS_DIR), $(BONUS_FILES))
 
 SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
+=======
+MAND_FILES = so_long 
+#map_validation check_limits window window_fill keyhook
+#BONUS_DIR = bonus/
+#BONUS_FILES	=	so_long_bonus map_validation_bonus check_limits_bonus \
+				window_bonus window_fill_bonus keyhook_bonus utils_bonus
+
+SRC_FILES	=	$(addprefix $(SL_DIR), $(MAND_FILES))
+#SRC_BFILES	=	$(addprefix $(BONUS_DIR), $(BONUS_FILES))
+
+SRC = $(addprefix $(SRC_DIR), $(addsuffix .c $(SRC_FILES)))
+OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .o $(SRC_FILES)))
+>>>>>>> 11c398221458645f93420e6f9ae247f61d4fa667
 
 BSRC		=	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_BFILES)))
 BOBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_BFILES)))
