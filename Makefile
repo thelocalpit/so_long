@@ -6,7 +6,7 @@
 #    By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 13:27:03 by pfalasch          #+#    #+#              #
-#    Updated: 2023/03/31 14:55:41 by pfalasch         ###   ########.fr        #
+#    Updated: 2023/04/04 12:16:23 by pfalasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,12 @@ SRC_DIR = src/
 OBJ_DIR = obj/
 CC = gcc
 CFLAGS = -Wextra -Wall -Werror
-#FSANITIZE	= -fsanitize=address -g3
+FSANITIZE	= -fsanitize=address -g3
 RM = rm -f
 ECHO = echo -e
 MINILIBXCC	= -I mlx -L lib/minilibx -lmlx
 #questo open gl cosa mi serve?
-#OPENGL		= -framework OpenGL -framework AppKit
+OPENGL		= -framework OpenGL -framework AppKit
 
 DEF_COLOR	=	\033[0;39m
 ORANGE		=	\033[0;33m
@@ -38,17 +38,18 @@ MAGENTA		=	\033[0;95m
 CYAN		=	\033[0;96m
 WHITE		=	\033[0;97m
 
-SO_LONG_DIR = so_long/
-MAND_FILES = so_long map_validation check_limits window window_fill keyhook
+SL_DIR		=	mandatory/
+MAND_FILES = so_long 
+#map_validation check_limits window window_fill keyhook
 #BONUS_DIR = bonus/
 #BONUS_FILES	=	so_long_bonus map_validation_bonus check_limits_bonus \
 				window_bonus window_fill_bonus keyhook_bonus utils_bonus
 
-SRC_FILES = $(addprefix $(SO_LONG_DIR), $(MAND_FILES))
-SRC_BFILES = $(addprefix $(BONUS_DIR), $(BONUS_FILES))
+SRC_FILES	=	$(addprefix $(SL_DIR), $(MAND_FILES))
+#SRC_BFILES	=	$(addprefix $(BONUS_DIR), $(BONUS_FILES))
 
 SRC = $(addprefix $(SRC_DIR), $(addsuffix .c $(SRC_FILES)))
-OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .O $(SRC_FILES)))
+OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .o $(SRC_FILES)))
 
 #BSRC		=	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_BFILES)))
 #BOBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_BFILES)))
