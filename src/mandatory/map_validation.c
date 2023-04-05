@@ -6,25 +6,33 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:24:10 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/05 17:48:39 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/05 23:00:04 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../inc/so_long.h"
 
-int ft_check(char *line)
+void ft_check_pce(char *buffer, t_game *game)
 {
 	int i;
 
-	if (!line)
-		return (0);
-	while (line[i])
+	i = 0;
+	while (buffer[i])
 	{
-		if (line[i] == '\0')
-			return (1);
+		if (buffer[i] == 'P')
+			game->player++;
+		if (buffer[i] == 'C')
+			game->collect++;
+		if (buffer[i] == 'E')
+			game->exit++;
 		i++;
 	}
-	return (0);
+	if (game->player != 1 || game->collect < 1 || game->exit != 1)
+	{
+		ft_printf("Error\n");
+		ft_printf("Numero di giocatori, collectibles o uscite sbagliato !!");
+		exit(1);
+	}
 }
 
 char	*ft_join(char *line, char c)
@@ -48,44 +56,33 @@ char	*ft_join(char *line, char c)
 	return (str);
 }
 
-void	ft_check_pce(char *buffer, t_game *game)
-{
-	int	i;
 
-	i = 0;
-	while (buffer[i])
-	{
-		if (buffer[i] == 'P')
-			game->player++;
-		if (buffer[i] == 'C')
-			game->collect++;
-		if (buffer[i] == 'E')
-			game->exit++;
-	}
-	if (game->player != 1 || game->collect < 1 || game->exit != 1)
-	{
-		ft_printf("Error\n");
-		ft_printf("Numero di giocatori, collectibles o uscite sbagliato !!");
-		exit(1);
-	}
-}
+
 void	ft_check_map(char *buffer, t_game *game)
 {
-	int i;
-
-	i = 0;
-	while (buffer[i])
-	{
-		if (buffer[i] == '\n')
-			game->map_y++;
-		i++;
-	}
 	game->map_area = ft_strlen(buffer) - game->map_y;
 	if (game->map_area != game->map_x * game->map_y)
 	{
 		ft_printf("errror\nLa mappa ha un layout errato\n");
 		exit(1);
 	}
+	ft_check_x_limits(game);
+	ft_check_y_limits(game);
+}
+int ft_check(char *line)
+{
+	int i;
+
+	i = 0;
+	if (!line)
+		return (0);
+	while (line[i])
+	{
+		if (line[i] == '\0')
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 char	*ft_get_map(int fd)
@@ -114,4 +111,5 @@ char	*ft_get_map(int fd)
 			return (line);
 		line = ft_join(line, character);
 	}
+	return (line);
 }

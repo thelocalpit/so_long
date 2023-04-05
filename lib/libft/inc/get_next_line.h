@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajordan- <ajordan-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/02 12:47:43 by ajordan-          #+#    #+#             */
-/*   Updated: 2021/10/19 14:26:13 by ajordan-         ###   ########.fr       */
+/*   Created: 2021/08/16 10:12:35 by ajordan-          #+#    #+#             */
+/*   Updated: 2022/02/13 20:29:41 by ajordan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-*	DESCRIPTION
-*	Outputs the string ’s’ to the given file descriptor.
-*	PARAMETERS
-*	#1. The string to output.
-*	#2. The file descriptor on which to write.
-*	RETURN VALUES
-*	-
-*/
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#include "libft.h"
+# include <stdlib.h>
 
-void	ft_putstr_fd(char *s, int fd)
-{
-	int	i;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
-	i = 0;
-	if (s != 0)
-	{	
-		while (s[i])
-		{	
-			write(fd, &s[i], 1);
-			i++;
-		}
-	}
-}
+char	*get_next_line(int fd);
+char	*ft_read_to_left_str(int fd, char *left_str);
+char	*ft_strchr(char *s, int c);
+char	*ft_strjoin(char *left_str, char *buff);
+size_t	ft_strlen(char *s);
+char	*ft_get_line(char *left_str);
+char	*ft_new_left_str(char *left_str);
+
+#endif

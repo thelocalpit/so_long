@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ajordan- <ajordan-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 09:55:54 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/28 09:55:55 by pfalasch         ###   ########.fr       */
+/*   Created: 2021/08/09 14:04:23 by ajordan-          #+#    #+#             */
+/*   Updated: 2021/10/19 13:30:27 by ajordan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

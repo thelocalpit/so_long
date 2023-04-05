@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ajordan- <ajordan-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 09:56:03 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/28 09:56:04 by pfalasch         ###   ########.fr       */
+/*   Created: 2021/08/09 14:53:46 by ajordan-          #+#    #+#             */
+/*   Updated: 2021/10/19 13:31:40 by ajordan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

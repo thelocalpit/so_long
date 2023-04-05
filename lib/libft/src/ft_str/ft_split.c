@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ajordan- <ajordan-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 10:00:18 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/28 10:00:19 by pfalasch         ###   ########.fr       */
+/*   Created: 2021/08/02 13:53:28 by ajordan-          #+#    #+#             */
+/*   Updated: 2021/10/19 13:44:18 by ajordan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 /*
 *	DESCRIPTION

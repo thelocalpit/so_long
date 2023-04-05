@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ajordan- <ajordan-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 09:56:51 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/28 09:56:52 by pfalasch         ###   ########.fr       */
+/*   Created: 2021/07/22 12:48:23 by ajordan-          #+#    #+#             */
+/*   Updated: 2021/07/27 11:05:55 by ajordan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 

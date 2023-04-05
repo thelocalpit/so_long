@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ajordan- <ajordan-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 09:57:36 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/28 09:57:38 by pfalasch         ###   ########.fr       */
+/*   Created: 2021/09/07 13:40:58 by ajordan-          #+#    #+#             */
+/*   Updated: 2021/10/19 14:53:21 by ajordan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

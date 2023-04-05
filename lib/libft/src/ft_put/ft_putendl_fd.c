@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ajordan- <ajordan-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 09:57:53 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/28 09:57:54 by pfalasch         ###   ########.fr       */
+/*   Created: 2021/08/02 13:02:06 by ajordan-          #+#    #+#             */
+/*   Updated: 2021/10/19 14:24:46 by ajordan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 /*
 *	DESCRIPTION
