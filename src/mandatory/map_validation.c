@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:24:10 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/05 23:00:04 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/13 18:32:23 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	ft_check_map(char *buffer, t_game *game)
 	ft_check_x_limits(game);
 	ft_check_y_limits(game);
 }
+
 int ft_check(char *line)
 {
 	int i;

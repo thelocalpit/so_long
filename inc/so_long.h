@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:12:30 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/05 22:44:44 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/14 17:08:59 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,25 @@
 
 typedef struct s_game {
 	char	**map;
-	int map_x;
-	int map_y;
-	int map_area;
-	int x;
-	int y;
-	int player;
-	int collect;
-	int	exit;
-	
+	int		map_x;
+	int		map_y;
+	int		map_area;
+	int		x;
+	int		y;
+	int		player;
+	int		player_x;
+	int		player_y;
+	int		player_mov;
+	char	*player_dir;
+	int		collect;
+	int		exit;
+	void	*mlx;
+	void	*mlx_win;
+	int		pxl;
+	int		count_collectible;
+	char 	*file;
 
-} t_game;
+}				t_game;
 
 
 //MAP VALIDATION
@@ -54,5 +62,8 @@ void	ft_init_struct(t_game *game);
 void	ft_limits_error(void);
 void	ft_check_y_limits(t_game *game);
 void	ft_check_x_limits(t_game *game);
+
+// WINDOW
+void	ft_window(t_game *game);
 
 #endif
