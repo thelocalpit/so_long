@@ -6,15 +6,15 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:24:10 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/13 18:32:23 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/15 00:26:19 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/so_long.h"
 
-void ft_check_pce(char *buffer, t_game *game)
+void	ft_check_pce(char *buffer, t_game *game)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (buffer[i])
@@ -60,7 +60,24 @@ char	*ft_join(char *line, char c)
 
 void	ft_check_map(char *buffer, t_game *game)
 {
-	game->map_area = ft_strlen(buffer) - game->map_y;
+	int	i;
+
+	i = - 1;
+	while (game->map[0][++i] != '\0')
+		game->map_x++;
+	i = -1;
+	while (buffer[++i])
+	{
+		if (buffer[i] == '\n')
+			game->map_y++;
+	}
+	game->map_y++;
+	// ft_printf("%s\n", buffer);
+	game->map_area = ft_strlen(buffer) - game->map_y + 1;
+	// ft_printf("map_area: %d;\tmap_x * map_y = %d\n", game->map_area, (game->map_x * game->map_y));
+	// ft_printf("map_x: %d\n", game->map_x);
+	// ft_printf("map_y: %d\n", game->map_y);
+	
 	if (game->map_area != game->map_x * game->map_y)
 	{
 		ft_printf("errror\nLa mappa ha un layout errato\n");
@@ -70,9 +87,9 @@ void	ft_check_map(char *buffer, t_game *game)
 	ft_check_y_limits(game);
 }
 
-int ft_check(char *line)
+int	ft_check(char *line)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!line)

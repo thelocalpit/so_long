@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:12:58 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/14 17:04:34 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/15 00:01:16 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,14 @@ void	ft_window(t_game	*game)
 			game->pxl * game->map_y, "Pokemon Giallo, Anno '99");
 	ft_fill_window(game);
 }
+
 void	ft_validate_map(char **av, t_game *game)
 {
-	int		i;
+	// int		i;
 	int		fd;
 	char	*buffer;
 
-	i = 0;
+	// i = 0;
 	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
 	{
@@ -40,11 +41,6 @@ void	ft_validate_map(char **av, t_game *game)
 	game->count_collectible = ft_count_collectible(buffer);
 	// ft_printf("sono qui1");
 	game->map = ft_split(buffer, '\n');
-	while (game->map[0][i] != '\0')
-	{
-		game->map_x++;
-		i++;
-	}
 	ft_check_map(buffer, game);
 	close(fd);
 }
@@ -56,7 +52,13 @@ void	ft_init_struct(t_game *game)
 	game->map_area = 0;
 	game->x = 0;
 	game->y = 0;
+	game->pxl = 0;
 	game->player = 0;
+	game->player_mov = 0;
+	game->player_dir = "./img/down.xpm";
+	game->player_mov = 0;
+	game->collect = 0;
+	game->exit = 0;
 }
 
 void	ft_check_args(int ac, char **av)
@@ -76,11 +78,7 @@ void	ft_check_args(int ac, char **av)
 int	main(int ac, char **av)
 {
 	t_game	game;
-/* 	int		i;
-	int		j;
 
-	i = 0;
-	j = 0; */
 	ft_check_args(ac, av);
 	// ft_printf("sono qui1");
 	ft_init_struct(&game);
@@ -88,25 +86,9 @@ int	main(int ac, char **av)
 	ft_validate_map(av, &game);
 	ft_window(&game);
 	// ft_printf("sono qui3");
-	// write(1, &game.map[0][0], 1);
+	mlx_hook(game.mlx_win, 2, 1L << 0, ft_keyboard, &game);
+	mlx_hook(game.mlx_win, 17, 1L << 5, ft_close_window, &game);
+	mlx_loop(game.mlx);
 	exit(0);
 	return (0);
-	/* while (game.map[i] < game.map[game.map_y - 1])
-	{
-		j = 0;
-		while (game.map[i][j])
-		{
-			printf("%s", &game.map[i][j]);
-			j++;
-		}
-		i++;
-	} */
-	/* 	for (int i = 0; i < game.map_y; i++)
-		{
-			for (int j = 0; j < game.map_x; j++)
-			{
-				printf("%c", game.map[i][j]);
-			}
-			printf("\n");
-		} */
 }

@@ -6,7 +6,7 @@
 #    By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/07 13:03:59 by ajordan-          #+#    #+#              #
-#    Updated: 2023/04/05 21:48:51 by pfalasch         ###   ########.fr        #
+#    Updated: 2023/04/14 22:11:48 by pfalasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,7 @@ CYAN		=	\033[0;96m
 WHITE		=	\033[0;97m
 
 SL_DIR		=	mandatory/
-MAND_FILES	=	so_long map_validation check_limits 
-#window window_fill keyhook
+MAND_FILES	=	so_long map_validation check_limits window window_fill keyhook
 BONUS_DIR	=	bonus/
 BONUS_FILES	=	so_long_bonus map_validation_bonus check_limits_bonus \
 				window_bonus window_fill_bonus keyhook_bonus utils_bonus

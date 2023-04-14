@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:12:30 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/14 17:08:59 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:10:27 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ char	*ft_join(char *line, char c);
 void	ft_validate_map(char **av, t_game *game);
 void	ft_check_args(int ac, char **av);
 void	ft_init_struct(t_game *game);
+void	ft_window(t_game *game);
 
 //CHECK LIMITS
 void	ft_limits_error(void);
@@ -64,6 +65,23 @@ void	ft_check_y_limits(t_game *game);
 void	ft_check_x_limits(t_game *game);
 
 // WINDOW
-void	ft_window(t_game *game);
+int		ft_close_window(t_game *game);
+void	ft_fill_floor(t_game *game);
+int		ft_count_collectible(char *buffer);
+void	ft_fill_window(t_game *game);
+
+// WINDOW FILL
+void	ft_put_limits(t_game *game);
+void	ft_put_floor(t_game *game);
+void	ft_put_collect(t_game *game);
+void	ft_put_exit(t_game *game);
+void	ft_put_player(t_game *game);
+
+// KEYHOOK
+void	ft_move_up(t_game *game);
+void	ft_move_down(t_game *game);
+void	ft_move_left(t_game *game);
+void	ft_move_right(t_game *game);
+int		ft_keyboard(int keyhook, t_game *game);
 
 #endif

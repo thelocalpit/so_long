@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:36:14 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/05 22:46:48 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:08:48 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_check_x_limits(t_game *game)
 	}
 }
 
-void 	ft_check_y_limits(t_game *game)
+void	ft_check_y_limits(t_game *game)
 {
 	game->x = 0;
 	game->y = 0;

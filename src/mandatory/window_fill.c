@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 17:49:54 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/14 18:08:14 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/14 18:46:26 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,14 @@ void	ft_put_exit(t_game *game)
 	mlx_put_image_to_window(game->mlx, game->mlx_win,
 		game->file, game->pxl * game->x, game->pxl * game->y);
 }
+
 /* come gestire il player?? */
 void	ft_put_player(t_game *game)
 {
 	game->file = mlx_xpm_file_to_image(game->mlx,
-			game->pl_dir, &game->pxl, &game->pxl);
-	game->pl_y = game->y;
-	game->pl_x = game->x;
+			game->player_dir, &game->pxl, &game->pxl);
+	game->player_y = game->y;
+	game->player_x = game->x;
 	mlx_put_image_to_window(game->mlx, game->mlx_win,
 		game->file, game->pxl * game->x, game->pxl * game->y);
 }

@@ -6,11 +6,18 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:14:46 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/14 17:49:21 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:05:09 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/so_long.h"
+
+int	ft_close_window(t_game	*game)
+{
+	mlx_destroy_window(game->mlx, game->mlx_win);
+	exit(1);
+	return (0);
+}
 
 /* per riempire la parte del floor dobbiamo utilizzare due funzioni della
 	libreria mlx. la prima è necessaria per pasare il fil xpm (che non sono
@@ -38,6 +45,7 @@ void	ft_fill_floor(t_game *game)
 		game->y++;
 	}
 }
+
 int	ft_count_collectible(char *buffer)
 {
 	int	i;
