@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:14:46 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/14 22:05:09 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/16 18:13:35 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,26 @@ int	ft_count_collectible(char *buffer)
 	return (count);
 }
 
-void	ft_fill_window(t_game *game)
+void ft_exit_check(t_game *game)
+{
+	game->y = 0;
+	while ((game->y) < (game->map_y))
+	{
+		game->x = 0;
+		while ((game->x) < (game->map_x))
+		{
+			if (game->map[game->y][game->x] == 'E')
+				ft_put_exit(game);
+			game->x++;
+		}
+		game->y++;
+	}
+}
+
+void ft_fill_window(t_game *game)
 {
 	ft_fill_floor(game);
+	game->collect = 0;
 	game->y = 0;
 	while ((game->y) < (game->map_y))
 	{
@@ -77,11 +94,14 @@ void	ft_fill_window(t_game *game)
 				ft_put_collect(game);
 			if (game->map[game->y][game->x] == 'P')
 				ft_put_player(game);
-			if (game->map[game->y][game->x] == 'E')
-				ft_put_exit(game);
+			// if (game->map[game->y][game->x] == 'E')
+			// 	ft_put_exit(game);
 			game->x++;
 		}
 		game->y++;
 	}
+	ft_exit_check(game);
+	// if (if game->count_collectible - game->collect == 0)
+	// 	ft_put_exit_open(game);
 	ft_printf("Movements: %d\n", game->player_mov);
 }

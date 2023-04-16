@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:24:10 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/15 00:26:19 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/16 20:07:13 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_check_map(char *buffer, t_game *game)
 {
 	int	i;
 
-	i = - 1;
+	i = -1;
 	while (game->map[0][++i] != '\0')
 		game->map_x++;
 	i = -1;

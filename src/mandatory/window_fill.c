@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 17:49:54 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/14 18:46:26 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/16 18:13:54 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_put_collect(t_game *game)
 
 void	ft_put_exit(t_game *game)
 {
-	if (game->collect == 0)
+	if (game->count_collectible - game->collect == 0)
 		game->file = mlx_xpm_file_to_image(game->mlx,
 				"./img/exit_open.xpm", &game->pxl, &game->pxl);
 	else

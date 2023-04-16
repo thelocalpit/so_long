@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:12:58 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/15 00:01:16 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/16 20:05:55 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,9 @@ void	ft_window(t_game	*game)
 
 void	ft_validate_map(char **av, t_game *game)
 {
-	// int		i;
 	int		fd;
 	char	*buffer;
 
-	// i = 0;
 	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
 	{
@@ -38,8 +36,7 @@ void	ft_validate_map(char **av, t_game *game)
 	}
 	buffer = ft_get_map(fd);
 	ft_check_pce(buffer, game);
-	game->count_collectible = ft_count_collectible(buffer);
-	// ft_printf("sono qui1");
+	game->collect = ft_count_collectible(buffer);
 	game->map = ft_split(buffer, '\n');
 	ft_check_map(buffer, game);
 	close(fd);
@@ -57,7 +54,7 @@ void	ft_init_struct(t_game *game)
 	game->player_mov = 0;
 	game->player_dir = "./img/down.xpm";
 	game->player_mov = 0;
-	game->collect = 0;
+	game->count_collectible = 0;
 	game->exit = 0;
 }
 
@@ -80,15 +77,14 @@ int	main(int ac, char **av)
 	t_game	game;
 
 	ft_check_args(ac, av);
-	// ft_printf("sono qui1");
 	ft_init_struct(&game);
-	// ft_printf("sono qui2");
 	ft_validate_map(av, &game);
 	ft_window(&game);
-	// ft_printf("sono qui3");
 	mlx_hook(game.mlx_win, 2, 1L << 0, ft_keyboard, &game);
 	mlx_hook(game.mlx_win, 17, 1L << 5, ft_close_window, &game);
+	// ft_printf("questo è il numero di collectible finale: %d\n", game.collect);
 	mlx_loop(game.mlx);
 	exit(0);
 	return (0);
 }
+
