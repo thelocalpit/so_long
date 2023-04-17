@@ -6,14 +6,13 @@
 #    By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/07 13:03:59 by ajordan-          #+#    #+#              #
-#    Updated: 2023/04/14 22:11:48 by pfalasch         ###   ########.fr        #
+#    Updated: 2023/04/17 16:35:25 by pfalasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SHELL		=	/bin/bash
 
 NAME		= so_long
-BNAME		= so_long_bonus
 INC			= inc
 HEADER		= -I inc
 LIBFT		= lib/libft/
@@ -22,7 +21,6 @@ SRC_DIR		= src/
 OBJ_DIR		= obj/
 CC			= gcc
 CFLAGS		= -Wall -Werror -Wextra -g
-FSANITIZE	= -fsanitize=address -g3
 RM			= rm -f
 ECHO		= echo -e
 MINILIBXCC	= -I mlx -L lib/minilibx -lmlx
@@ -41,18 +39,11 @@ WHITE		=	\033[0;97m
 
 SL_DIR		=	mandatory/
 MAND_FILES	=	so_long map_validation check_limits window window_fill keyhook
-BONUS_DIR	=	bonus/
-BONUS_FILES	=	so_long_bonus map_validation_bonus check_limits_bonus \
-				window_bonus window_fill_bonus keyhook_bonus utils_bonus
 
 SRC_FILES	=	$(addprefix $(SL_DIR), $(MAND_FILES))
-SRC_BFILES	=	$(addprefix $(BONUS_DIR), $(BONUS_FILES))
 
 SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
-
-BSRC		=	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_BFILES)))
-BOBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_BFILES)))
 
 OBJF		=	.cache_exists
 
@@ -85,7 +76,6 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(OBJF)
 $(OBJF):
 			@mkdir -p $(OBJ_DIR)
 			@mkdir -p $(OBJ_DIR)$(SL_DIR)
-			@mkdir -p $(OBJ_DIR)$(BONUS_DIR)
 			@touch $(OBJF)
 
 clean:
@@ -108,30 +98,9 @@ fclean:		clean
 			@$(ECHO) -n "$(CYAN)[minilibx]:\texec. files$(DEF_COLOR)$(GREEN)  => Cleaned!$(DEF_COLOR)\n"
 
 
-re:			fclean all
+re:			fclean start
 			@$(ECHO) -n "$(GREEN)Cleaned and rebuilt everything for [so_long]!$(DEF_COLOR)\n"
 
-bonus:
-			@$(ECHO) -n "$(YELLOW)[Dependencies]:\t$(DEF_COLOR)"
-			@$(ECHO) -n "$(RED)[$(DEF_COLOR)"
-			@make allbonus
-
-allbonus:	$(BNAME)
-
-$(BNAME):	$(BOBJ)
-			@$(ECHO) -n "$(RED)]$(DEF_COLOR)"
-			@$(ECHO) -n "$(GREEN) => 100%$(DEF_COLOR)\n"
-			@make -C $(LIBFT)
-			@cp lib/libft/libft.a .
-			@make -s -C $(MINILIBX)
-			@$(ECHO) -n "$(YELLOW)[MINILIBX]:\t$(DEF_COLOR)"
-			@$(ECHO) -n "$(RED)[$(DEF_COLOR)"
-			@$(ECHO) -n "$(ORANGE)=$(DEF_COLOR)"
-			@$(ECHO) -n "$(RED)]$(DEF_COLOR)"
-			@$(ECHO) "$(GREEN) => Success!$(DEF_COLOR)"
-			@$(ECHO) -n "$(YELLOW)[$(BNAME)]:$(DEF_COLOR)"
-			@$(CC) $(CFLAGS) $(BSRC) $(HEADER) libft.a  $(MINILIBXCC) $(OPENGL) -o $(BNAME)
-			@$(ECHO) "$(GREEN) => Success!$(DEF_COLOR)"
 
 norm:
 			@clear
