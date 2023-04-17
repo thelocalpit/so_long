@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:24:10 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/16 20:07:13 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:38:20 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ char	*ft_join(char *line, char c)
 	return (str);
 }
 
-
-
 void	ft_check_map(char *buffer, t_game *game)
 {
 	int	i;
@@ -72,12 +70,7 @@ void	ft_check_map(char *buffer, t_game *game)
 			game->map_y++;
 	}
 	game->map_y++;
-	// ft_printf("%s\n", buffer);
 	game->map_area = ft_strlen(buffer) - game->map_y + 1;
-	// ft_printf("map_area: %d;\tmap_x * map_y = %d\n", game->map_area, (game->map_x * game->map_y));
-	// ft_printf("map_x: %d\n", game->map_x);
-	// ft_printf("map_y: %d\n", game->map_y);
-	
 	if (game->map_area != game->map_x * game->map_y)
 	{
 		ft_printf("errror\nLa mappa ha un layout errato\n");

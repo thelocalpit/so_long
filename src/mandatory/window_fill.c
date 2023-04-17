@@ -6,12 +6,11 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 17:49:54 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/16 18:13:54 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:41:42 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/so_long.h"
-
 
 void	ft_put_limits(t_game	*game)
 {

@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:14:46 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/16 18:13:35 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:40:05 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,6 @@ int	ft_close_window(t_game	*game)
 	return (0);
 }
 
-/* per riempire la parte del floor dobbiamo utilizzare due funzioni della
-	libreria mlx. la prima è necessaria per pasare il fil xpm (che non sono
-	altro che caratteri ascii che ci permettono di raffiguare un'immagine) in
-	immagine vera e propria. per fare questo diamo l'indicazione fra gli argomenti
-	di dove si trova il file xpm e poi i pxl. siccome facciamo un quadrato, daremo
-	pxl due volte.
-	la seconda invece serve per mettere l'imamgine appena convertita nella win
-	alle giuste "coordinate". il ciclo while scorre come una normale matrice.
-	  */
 void	ft_fill_floor(t_game *game)
 {
 	game->y = 0;
@@ -62,7 +53,7 @@ int	ft_count_collectible(char *buffer)
 	return (count);
 }
 
-void ft_exit_check(t_game *game)
+void	ft_exit_check(t_game *game)
 {
 	game->y = 0;
 	while ((game->y) < (game->map_y))
@@ -78,7 +69,7 @@ void ft_exit_check(t_game *game)
 	}
 }
 
-void ft_fill_window(t_game *game)
+void	ft_fill_window(t_game *game)
 {
 	ft_fill_floor(game);
 	game->collect = 0;
@@ -94,14 +85,10 @@ void ft_fill_window(t_game *game)
 				ft_put_collect(game);
 			if (game->map[game->y][game->x] == 'P')
 				ft_put_player(game);
-			// if (game->map[game->y][game->x] == 'E')
-			// 	ft_put_exit(game);
 			game->x++;
 		}
 		game->y++;
 	}
 	ft_exit_check(game);
-	// if (if game->count_collectible - game->collect == 0)
-	// 	ft_put_exit_open(game);
 	ft_printf("Movements: %d\n", game->player_mov);
 }

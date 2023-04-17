@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:12:30 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/16 18:08:46 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:42:18 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,9 @@ typedef struct s_game {
 	void	*mlx_win;
 	int		pxl;
 	int		count_collectible;
-	char 	*file;
+	char	*file;
 
 }				t_game;
-
 
 //MAP VALIDATION
 char	*ft_get_map(int fd);

@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 19:14:06 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/16 20:11:37 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:36:30 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,29 +48,29 @@ void	ft_move_right(t_game *game)
 	ft_fill_window(game);
 }
 
-int	ft_keyboard(int keyhook, t_game *game)
+int	ft_keyboard(int kh, t_game *game)
 {
-	if (keyhook == 53)
+	if (kh == 53)
 		ft_close_window(game);
 	if ((game->count_collectible - game->collect == 0)
-		&& ((keyhook == 2 && game->map[game->player_y][game->player_x + 1] == 'E')
-		|| (keyhook == 1 && game->map[game->player_y + 1][game->player_x] == 'E')
-		|| (keyhook == 0 && game->map[game->player_y][game->player_x - 1] == 'E')
-		|| (keyhook == 13 && game->map[game->player_y - 1][game->player_x] == 'E')))
+		&& ((kh == 2 && game->map[game->player_y][game->player_x + 1] == 'E')
+		|| (kh == 1 && game->map[game->player_y + 1][game->player_x] == 'E')
+		|| (kh == 0 && game->map[game->player_y][game->player_x - 1] == 'E')
+		|| (kh == 13 && game->map[game->player_y - 1][game->player_x] == 'E')))
 	{
 		ft_printf("gioco finito!\n");
 		ft_close_window(game);
 	}
-	if (keyhook == 13 && game->map[game->player_y - 1][game->player_x] != '1'
+	if (kh == 13 && game->map[game->player_y - 1][game->player_x] != '1'
 		&& game->map[game->player_y - 1][game->player_x] != 'E')
 		ft_move_up(game);
-	if (keyhook == 0 && game->map[game->player_y][game->player_x - 1] != '1'
+	if (kh == 0 && game->map[game->player_y][game->player_x - 1] != '1'
 		&& game->map[game->player_y][game->player_x - 1] != 'E')
 		ft_move_left(game);
-	if (keyhook == 1 && game->map[game->player_y + 1][game->player_x] != '1'
+	if (kh == 1 && game->map[game->player_y + 1][game->player_x] != '1'
 		&& game->map[game->player_y + 1][game->player_x] != 'E')
 		ft_move_down(game);
-	if (keyhook == 2 && game->map[game->player_y][game->player_x + 1] != '1'
+	if (kh == 2 && game->map[game->player_y][game->player_x + 1] != '1'
 		&& game->map[game->player_y][game->player_x + 1] != 'E')
 		ft_move_right(game);
 	return (0);

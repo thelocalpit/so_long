@@ -6,12 +6,11 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:12:58 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/04/16 20:05:55 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:39:40 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/so_long.h"
-#include <stdio.h>
 
 void	ft_window(t_game	*game)
 {
@@ -80,11 +79,9 @@ int	main(int ac, char **av)
 	ft_init_struct(&game);
 	ft_validate_map(av, &game);
 	ft_window(&game);
-	mlx_hook(game.mlx_win, 2, 1L << 0, ft_keyboard, &game);
+	mlx_key_hook(game.mlx_win, &ft_keyboard, &game);
 	mlx_hook(game.mlx_win, 17, 1L << 5, ft_close_window, &game);
-	// ft_printf("questo è il numero di collectible finale: %d\n", game.collect);
 	mlx_loop(game.mlx);
 	exit(0);
 	return (0);
 }
-
